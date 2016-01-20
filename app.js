@@ -1,13 +1,20 @@
 'use strict'
 var koa = require('koa');
-var views = require('co-views');
 var app = module.exports = koa();
- 
-var render = views(__dirname + '/views', { ext: 'ejs' });
+ var handlebars = require("koa-handlebars");
 
-app.use(function *(){
-  this.body = yield render('index');
+
+app.use(handlebars({
+  defaultLayout: "main"
+}));
+
+app.use(function *() {
+  yield this.render("index", {
+    title: "Test Page",
+    name: "World"
+  });
 });
+
 
 
  app.listen(4088);

@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "co-views": "^2.1.0",
-    "ejs": "^2.3.4",
-    "koa": "^1.1.2"
+    "koa": "^1.1.2",
+    "koa-handlebars": "^0.5.7"
   }
 }
